@@ -56,10 +56,20 @@ for (int j = 0 ; j < inputs.size(); j++) { // for loop that prints the sorted li
 
 
 void bubbleSort(auto& Data) {
-for (int k = 1; k < Data.size(); k++)
-for (int i = 0; i < Data.size() -1 - k; i++)
-if (Data[i] > Data[i +1]){
-//pre-defined swap function
-swap(Data[i], Data[i + 1]);
+bool swapped = true;
+int passes = 0;
+string temp;
+while (swapped) {
+swapped = false;
+passes++;
+for (int i = 0; i < Data.size() - passes; i++) {
+if (Data[i] > Data[i + 1]) {
+//swap values
+temp = Data[i];
+Data[i] = Data[i + 1];
+Data[i + 1] = temp;
+swapped = true;
 } //end if
+} //end for
+} //end while
 } //end function
