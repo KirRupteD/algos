@@ -72,4 +72,5 @@ swapped = true;
 } //end if
 } //end for
 } //end while
+cout << " Number of passes " << passes << endl;
 } //end function
