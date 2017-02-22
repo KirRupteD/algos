@@ -30,8 +30,9 @@ int main()
  
     while(input != "#")//read an unknown number of inputs from keyboard
     {
-       inputs.push_back(input);
+       
        cin>>input;
+       inputs.push_back(input);
     }
 
    cout<<endl<<"["<<inputs.size()<<" values read from input source]"<<endl<<endl;
@@ -43,11 +44,7 @@ int main()
   }
 bubbleSort(inputs);
 
-cout << " This is your sorted list " << endl;
-for (int j = 0 ; j < inputs.size(); j++) { // for loop that prints the sorted list
-	
-	cout << inputs[j] << endl;
-}
+
 	
    
 
@@ -69,8 +66,22 @@ temp = Data[i];
 Data[i] = Data[i + 1];
 Data[i + 1] = temp;
 swapped = true;
+
+
+
 } //end if
+
 } //end for
+if((passes % 20000) == 0){
+	cout << " Number of passes " << passes <<endl;
+}
+
 } //end while
-cout << " Number of passes " << passes << endl;
+cout << " This is your sorted list " << endl;
+for (int j = 0 ; j < Data.size(); j++) { // for loop that prints the sorted list
+	
+	cout << Data[j] << endl;
+
+}
+
 } //end function
